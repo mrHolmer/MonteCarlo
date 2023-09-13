@@ -8,11 +8,13 @@ public class Main
       final double probabilityOfHeads = 0.5;
       boolean isHeads = true;
       int numberOfHeads = 0;
+      int numberOfTails = 0;
       System.out.println("The probability of a fair coin landing on heads is " + probabilityOfHeads + ".");
       System.out.println("The coin has landed heads " + numberOfHeads + " times.");
       System.out.println();
       System.out.println("I will now flip the coin.");
       System.out.println("It's tails!");
+      numberOfTails++;
       isHeads = false;
       System.out.println();
       System.out.println("I will now flip the coin again.");
@@ -20,7 +22,10 @@ public class Main
       isHeads = true;
       numberOfHeads = numberOfHeads + 1;
       System.out.println();
-      System.out.println("The coin has landed heads " + numberOfHeads + " times.");
+      System.out.println("The coin has landed heads " + numberOfHeads + " time.");
+      double proportionOfTails = numberOfTails/(numberOfTails + numberOfHeads + 0.0); //compound expression
+      System.out.println("The coin has landed tails " + proportionOfTails * 100 + " percent of the time.");
+
 
     }
   }
