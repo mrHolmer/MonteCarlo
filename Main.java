@@ -13,6 +13,7 @@ public class Main
       System.out.println("Hello, " + name + ". Heads or tails?");
       String call = s.nextLine();
       System.out.println(call + ", eh?");
+      s.close();
       System.out.println();
 
       final double probabilityOfHeads = 0.5;
