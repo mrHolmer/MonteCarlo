@@ -29,11 +29,13 @@ public class Main
       numberOfTails+=1; //compound assignment operator
       isHeads = false;
       System.out.println();
+
       System.out.println("I will now flip the coin again.");
       System.out.println("It's heads!");
       isHeads = true;
       numberOfHeads++; //increment operator
       System.out.println();
+
       System.out.println("The coin has landed heads " + numberOfHeads + " time.");
       double proportionOfTails = numberOfTails/(numberOfTails + numberOfHeads + 0.0); //compound expression
       System.out.println("The coin has landed tails " + proportionOfTails * 100 + " percent of the time.");
