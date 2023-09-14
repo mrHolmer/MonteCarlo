@@ -3,18 +3,19 @@ public class Main
   {
     public static void main(String[] args)
     {
-      System.out.println("Welcome to Monte Carlo!");
-      System.out.println("Brought to you by Enrico Fermi and Stanislaw Ulam");
-      System.out.println();
-
-      System.out.println("What is your name?");
-      Scanner s = new Scanner(System.in);
-      String name = s.nextLine();
-      System.out.println("Hello, " + name + ". Heads or tails?");
-      String call = s.nextLine();
-      System.out.println(call + ", eh?");
-      s.close();
-      System.out.println();
+//      System.out.println("Welcome to Monte Carlo!");
+//      System.out.println("Brought to you by Enrico Fermi and Stanislaw Ulam");
+//      System.out.println();
+//
+//      System.out.println("What is your name?");
+//      Scanner s = new Scanner(System.in);
+//      String name = s.nextLine();
+//      System.out.println("Hello, " + name + ". Heads or tails?");
+//      s = new Scanner(System.in);
+//      String call = s.nextLine();
+//      System.out.println(call + ", eh?");
+//      s.close();
+//      System.out.println();
 
       final double probabilityOfHeads = 0.5;
       boolean isHeads = true;
@@ -26,7 +27,7 @@ public class Main
 
       System.out.println("I will now flip the coin.");
       System.out.println("It's tails!");
-      numberOfTails+=1; //compound assignment operator
+      numberOfTails += 1; //compound assignment operator
       isHeads = false;
       System.out.println();
 
