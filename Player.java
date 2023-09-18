@@ -8,7 +8,7 @@ public class Player {
     public String getName()
     {
         return name;
-    }
+    } //accessor
     public void addBalance(double n)
     {
         balance += n;
