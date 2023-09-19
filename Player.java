@@ -1,6 +1,11 @@
 public class Player {
     private String name;
     private double balance;
+    public Player(String s)
+    {
+        name = s;
+    }
+
     public void setName(String s)
     {
         name = s;
