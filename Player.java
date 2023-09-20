@@ -1,6 +1,8 @@
 public class Player {
     private String name;
     private double balance;
+    private double wager;
+    private String guess;
     public Player(String s)
     {
         name = s;
@@ -21,6 +23,18 @@ public class Player {
     public double getBalance()
     {
         return balance;
+    }
+    public void setWager(double w)
+    {
+        wager = w;
+    }
+    public void setGuess(String g)
+    {
+        guess = g;
+    }
+    public String getGuess()
+    {
+        return guess;
     }
 
 }
