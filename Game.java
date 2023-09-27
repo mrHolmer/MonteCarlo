@@ -9,11 +9,19 @@ public class Game {
     {
         player = p;
         coin = c;
+        play();
     }
     public Game()
     {
         intro();
         getPlayerInfo();
+        getWager();
+        headsOrTails();
+        flip();
+        reportBalance();
+    }
+    public void play()
+    {
         getWager();
         headsOrTails();
         flip();
@@ -42,11 +50,12 @@ public class Game {
         System.out.println("How much would you like to risk on a coin flip?");
         Scanner s = new Scanner(System.in);
         double wager = s.nextDouble();
+        player.setWager(wager);
         if (wager > player.getBalance()) {
             System.out.println("I'm sorry.  You don't have sufficient funds for that wager.");
             getWager();
         }
-        player.setWager(wager);
+
     }
     public void headsOrTails() {
         System.out.println("Call it in the air.  Heads or tails?");
@@ -64,17 +73,26 @@ public class Game {
         String wager = formatter.format(player.getWager());
         if(player.getGuess().equalsIgnoreCase("heads")) {
             player.addBalance(player.getWager());
-            System.out.println("You won $" + wager + ".");
+            System.out.println("You won " + wager + ".");
         }
         else {
             player.addBalance(player.getWager()*-1);
-            System.out.println("You lost $" + wager + ".");
+            System.out.println("You lost " + wager + ".");
         }
     }
     public void reportBalance()
     {
         String balance = formatter.format(player.getBalance());
         System.out.println("Your balance is " + balance);
+        if(player.getBalance() > 0)
+        {
+            play();
+        }
+        else gameOver();
+    }
+    public void gameOver()
+    {
+        System.out.println("Better luck next time.");
     }
 
 }
