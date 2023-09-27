@@ -24,6 +24,10 @@ public class Player {
     {
         return balance;
     }
+    public double getWager()
+    {
+        return wager;
+    }
     public void setWager(double w)
     {
         wager = w;

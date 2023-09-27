@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Game {
     private Player player;
     private Coin coin;
+    private NumberFormat formatter = NumberFormat.getCurrencyInstance();
     public Game(Player p, Coin c)
     {
         player = p;
@@ -16,6 +17,7 @@ public class Game {
         getWager();
         headsOrTails();
         flip();
+        reportBalance();
     }
     public void intro()
     {
@@ -32,7 +34,6 @@ public class Game {
         player = new Player(name);
         s = new Scanner(System.in);
         player.addBalance(s.nextDouble());
-        NumberFormat formatter = NumberFormat.getCurrencyInstance();
         String balance = formatter.format(player.getBalance());
         System.out.println("Your balance is " + balance + ".");
         System.out.println();
@@ -60,6 +61,20 @@ public class Game {
     {
         coin = new Coin();
         coin.flip();
+        String wager = formatter.format(player.getWager());
+        if(player.getGuess().equalsIgnoreCase("heads")) {
+            player.addBalance(player.getWager());
+            System.out.println("You won $" + wager + ".");
+        }
+        else {
+            player.addBalance(player.getWager()*-1);
+            System.out.println("You lost $" + wager + ".");
+        }
+    }
+    public void reportBalance()
+    {
+        String balance = formatter.format(player.getBalance());
+        System.out.println("Your balance is " + balance);
     }
 
 }
