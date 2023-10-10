@@ -40,13 +40,8 @@ public class Game {
         System.out.println("What is your name?");
         Scanner s = new Scanner(System.in);
         String name = s.nextLine();
-        System.out.println("Hello, " + name + ". How much would you like to deposit?");
+        System.out.println("Hello, " + name);
         player = new Player(name);
-        s = new Scanner(System.in);
-        player.addBalance(s.nextDouble());
-        String balance = formatter.format(player.getBalance());
-        System.out.println("Your balance is " + balance + ".");
-        System.out.println();
     }
     public void menu()
     {
@@ -94,17 +89,17 @@ public class Game {
     }
     public void flip()
     {
-        headsOrTails();
+        //headsOrTails();
         coin.flip();
-        String wager = formatter.format(player.getWager());
-        if(player.getGuess().equalsIgnoreCase("heads")) {
-            player.addBalance(player.getWager());
-            System.out.println("You won " + wager + ".");
-        }
-        else {
-            player.addBalance(player.getWager()*-1);
-            System.out.println("You lost " + wager + ".");
-        }
+//        String wager = formatter.format(player.getWager());
+//        if(player.getGuess().equalsIgnoreCase("heads")) {
+//            player.addBalance(player.getWager());
+//            System.out.println("You won " + wager + ".");
+//        }
+//        else {
+//            player.addBalance(player.getWager()*-1);
+//            System.out.println("You lost " + wager + ".");
+//        }
     }
     public void reportBalance()
     {

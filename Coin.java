@@ -5,10 +5,26 @@ public class Coin {
     private boolean isHeads;
     public void flip()
     {
-        heads++;
         flips++;
-        isHeads = true;
-        System.out.println("It's heads");
+        if(Math.random()<0.5) {
+            isHeads = true;
+            heads++;
+            //System.out.println("It's heads.");
+        }
+        else
+        {
+            isHeads = false;
+            tails++;
+            //System.out.println("It's tails.");
+        }
+    }
+    public void flip(int flips)
+    {
+        for(int i = 0; i < flips; i++) flip();
+    }
+    public void maxFlip()
+    {
+        flip(Integer.MAX_VALUE);
     }
     public int getHeads()
     {
@@ -47,6 +63,16 @@ public class Coin {
         tails++;
         flips++;
         System.out.println("It was tails every time!");
+    }
+    public void inspect()
+    {
+        System.out.println(
+                "This coin has been flipped " + flips + " times. \n" +
+                        "It has landed heads " + heads + " times. \n" +
+                        "It has landed tails " + tails + " times. \n" +
+                        "It has landed heads " + getHeadsProportion() + " of the time. \n" +
+                        "It has landed tails " + getTailsProportion() + " of the time. \n"
+        );
     }
 
 }
